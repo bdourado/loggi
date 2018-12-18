@@ -1,0 +1,21 @@
+{
+    "name": "bdourado/loggi",
+    "description": "Loggi service package",
+    "keywords": ["loggi","brazil","php","frete"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno M. Dourado",
+            "email": "brunomouradourado@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Bdourado\\Loggi": "src/"
+        }
+    }
+}
