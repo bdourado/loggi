@@ -1,4 +1,4 @@
-# loggi
+# Loggi
 Loggi services API package
 
 ### Available services:
