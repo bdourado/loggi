@@ -4,15 +4,24 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use \Bdourado\Loggi\Loggi;
 
-$zipWithDraw = '01306-000';
-$zipDelivery = '01227-000';
+//your Loggi's account email
 $email = 'youremail@yourdomain.com';
+
+//your Loggi's account password
 $password = 'yourPassword';
-$env = 'dev'; // 'dev' or 'prod'
 
-$loggi = new Loggi($env,$email,$password,$zipWithDraw,$zipDelivery);
+//your environment 'dev' or 'prod'
+$env = 'dev';
 
-$res = $loggi->getEstimatedOrder();
+//zip code to take the package
+$zipWithDraw = '01306-000';
+
+//zip code to deliver the package
+$zipDelivery = '01227-000';
+
+$loggi = new Loggi($env,$email,$password);
+
+$res = $loggi->getEstimatedOrder($zipWithDraw,$zipDelivery);
 
 echo '<pre>';
 print_r($res);

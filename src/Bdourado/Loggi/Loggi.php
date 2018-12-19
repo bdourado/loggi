@@ -12,11 +12,9 @@ class Loggi
     private $email;
     private $password;
     private $apiKey;
-    private $zipWithDraw;
-    private $zipDelivery;
 
     //env = dev or prod
-    public function __construct($env, $email, $password, $zipWithDraw, $zipDelivery)
+    public function __construct($env, $email, $password)
     {
         if ( $env == 'prod' ) {
             $this->url = self::PROD_URL;
@@ -26,9 +24,7 @@ class Loggi
 
         $this->email = $email;
         $this->password = $password;
-        $this->zipWithDraw = $zipWithDraw;
-        $this->zipDelivery = $zipDelivery;
-
+        
         $apiKey = $this->getApiKey();
 
         if ( isset($apiKey->data->login->user->apiKey) ) {
@@ -50,10 +46,10 @@ class Loggi
         return $response;
     }
 
-    public function getEstimatedOrder(){
+    public function getEstimatedOrder($zipWithDraw, $zipDelivery){
 
-        $latLonWithDraw = $this->getLatLon($this->zipWithDraw);
-        $latLonDelivery = $this->getLatLon($this->zipDelivery);
+        $latLonWithDraw = $this->getLatLon($zipWithDraw);
+        $latLonDelivery = $this->getLatLon($zipDelivery);
 
         $query = '
         query{
