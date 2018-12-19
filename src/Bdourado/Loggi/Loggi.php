@@ -121,7 +121,7 @@ class Loggi
         $headers[] = "Content-Type: application/x-www-form-urlencoded";
 
         if ( isset($this->apiKey) ) {
-            //$headers[] = "Authorization: ApiKey $this->email:$this->apiKey";
+            $headers[] = "Authorization: ApiKey $this->email:$this->apiKey";
         }
 
         $ch = curl_init();
