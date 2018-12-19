@@ -24,7 +24,7 @@ class Loggi
 
         $this->email = $email;
         $this->password = $password;
-        
+
         $apiKey = $this->getApiKey();
 
         if ( isset($apiKey->data->login->user->apiKey) ) {
