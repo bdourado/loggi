@@ -2,9 +2,11 @@
 Loggi services API package
 
 ### Available services:
-<li>Estimated order</li>
-<li>Cities available</li>
 
+* Estimated order
+* Cities available
+
+  
 ### Installation
 
 <code>composer require bdourado/loggi</code>
