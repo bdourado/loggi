@@ -40,9 +40,7 @@ class Loggi
     {
         $query = 'mutation{login(input:{email: "'.$this->email.'",password: "'.$this->password.'"}){user {apiKey}}}';
         $response = $this->curl($query);
-        echo '<pre>';
-        print_r($response);
-        echo '</pre>';
+
         return $response;
     }
 
